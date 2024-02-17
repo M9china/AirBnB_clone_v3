@@ -2,7 +2,6 @@
 """
 Creates Flask app; and register the blueprint app_views to Flask instance app.
 """
-
 from os import getenv
 from flask import Flask, jsonify
 from flask_cors import CORS
