@@ -19,18 +19,18 @@ app.url_map.strict_slashes = False
 
 @app.teardown_appcontext
 def teardown_engine(exception):
-    '''
+    """
     Removes the current SQLAlchemy Session object after each request.
-    '''
+    """
     storage.close()
 
 
 # Error handlers for expected app behavior:
 @app.errorhandler(404)
 def not_found(error):
-    '''
+    """
     Return errmsg `Not Found`.
-    '''
+    """
     response = {'error': 'Not found'}
     return jsonify(response), 404
 

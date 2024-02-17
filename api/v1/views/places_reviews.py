@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-'''
+"""
 Create a new view for Review objects - handles all default RESTful API
-'''
+"""
 
 # Import necessary modules
 from flask import abort, jsonify, request
@@ -16,9 +16,9 @@ from models import storage
 @app_views.route('/places/<place_id>/reviews', methods=['GET'],
                  strict_slashes=False)
 def get_reviews_by_place(place_id):
-    '''
+    """
     Retrieves the list of all Review objects of a Place
-    '''
+    """
     # Get the Place object with the given ID from the storage
     place = storage.get(Place, place_id)
     if not place:
